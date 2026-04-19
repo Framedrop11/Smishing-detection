@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.smishingdetector">
+ 
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+ 
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+ 
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+ 
+        <!--
+            BUG FIX #1: Removed android:permission="android.permission.BROADCAST_SMS"
+            That attribute requires the *sender* of the broadcast to hold BROADCAST_SMS,
+            which is a privileged system permission. Because the Android telephony framework
+            does NOT hold that permission when it fires SMS_RECEIVED on modern ROMs (AOSP /
+            MIUI / OneUI etc.), the system's broadcast is silently rejected and onReceive()
+            is NEVER called. Remove the attribute entirely so any system broadcast can
+            reach this receiver.
+        -->
+        <receiver
+            android:name=".SmsReceiver"
+            android:exported="true">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+ 
+    </application>
+ 
+</manifest>

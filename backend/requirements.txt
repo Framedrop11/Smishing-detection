@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+tensorflow
+tf-keras
+gensim
+scikit-learn
+lime
+pandas
+numpy
+requests
+pydantic
+tldextract

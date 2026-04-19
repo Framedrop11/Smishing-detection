@@ -1,0 +1,94 @@
+# ============================================================
+# Python (Backend)
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+.installed.cfg
+lib/
+lib64/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model files (large binaries — use Git LFS if needed)
+*.h5
+*.keras
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.bin
+
+# Logs and temp outputs
+*.log
+*.tmp
+*.bak
+logs/
+output/
+results/
+
+# ============================================================
+# Android
+# ============================================================
+*.iml
+.gradle/
+local.properties
+.idea/
+.DS_Store
+android_app/build/
+android_app/*/build/
+android_app/captures/
+android_app/.externalNativeBuild/
+android_app/.cxx/
+android_app/*.keystore
+android_app/release/
+
+# Generated files
+android_app/app/src/main/assets/vocab.json
+android_app/app/src/main/assets/*.tflite
+
+# ============================================================
+# OS / Editor
+# ============================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ============================================================
+# Secrets / Config
+# ============================================================
+*.env
+.env.*
+secrets.json
+config.local.*
